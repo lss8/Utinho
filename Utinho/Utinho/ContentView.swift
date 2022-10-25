@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showSheet: Bool = false
+    @State private var showBars: Bool = false
+    
     var body: some View {
         VStack() {
             VStack(spacing: 32.0) {
@@ -17,7 +20,7 @@ struct ContentView: View {
                         ProgressView(value: 0.75)
                         ProgressView(value: 0.5)
                     }
-                    //.hidden()
+                    .opacity(showBars ? 1 : 0)
                     .frame(width: 64, height: 96)
                     VStack {
                         Image("Ciclo_Placeholder")
@@ -40,7 +43,14 @@ struct ContentView: View {
                 }
                 VStack(spacing: 12.0) {
                     Image(systemName: "chevron.up")
-                    Text("Kit de sobrevivência uterina")
+                    Button("Kit de sobrevivência uterina") {
+                        showSheet.toggle()
+                        showBars.toggle()
+                    }
+                    .sheet(isPresented: $showSheet) {
+                        Text("A sheet abriu")
+                            .presentationDetents([.fraction(0.28)])
+                    }
                 }
                 .frame(width: 345, height: 80)
                 .background(.gray)
