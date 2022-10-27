@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F102D6D290B080500C97744 /* CicloMenstrualView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F102D6C290B080500C97744 /* CicloMenstrualView.swift */; };
+		8F102D6F290B260E00C97744 /* DayCounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F102D6E290B260E00C97744 /* DayCounterView.swift */; };
 		8F77EACF290854F100BAB11A /* UtinhoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F77EACE290854F100BAB11A /* UtinhoApp.swift */; };
 		8F77EAD1290854F100BAB11A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F77EAD0290854F100BAB11A /* ContentView.swift */; };
 		8F77EAD3290854F200BAB11A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F77EAD2290854F200BAB11A /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8F102D6C290B080500C97744 /* CicloMenstrualView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CicloMenstrualView.swift; sourceTree = "<group>"; };
+		8F102D6E290B260E00C97744 /* DayCounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCounterView.swift; sourceTree = "<group>"; };
 		8F77EACB290854F100BAB11A /* Utinho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Utinho.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F77EACE290854F100BAB11A /* UtinhoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtinhoApp.swift; sourceTree = "<group>"; };
 		8F77EAD0290854F100BAB11A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +57,8 @@
 			children = (
 				8F77EACE290854F100BAB11A /* UtinhoApp.swift */,
 				8F77EAD0290854F100BAB11A /* ContentView.swift */,
+				8F102D6C290B080500C97744 /* CicloMenstrualView.swift */,
+				8F102D6E290B260E00C97744 /* DayCounterView.swift */,
 				8F77EAD2290854F200BAB11A /* Assets.xcassets */,
 				8F77EAD4290854F200BAB11A /* Preview Content */,
 			);
@@ -138,7 +144,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F77EAD1290854F100BAB11A /* ContentView.swift in Sources */,
+				8F102D6F290B260E00C97744 /* DayCounterView.swift in Sources */,
 				8F77EACF290854F100BAB11A /* UtinhoApp.swift in Sources */,
+				8F102D6D290B080500C97744 /* CicloMenstrualView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
