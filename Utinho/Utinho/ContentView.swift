@@ -16,9 +16,8 @@ struct ContentView: View {
             VStack(spacing: 32.0) {
                 HStack(spacing: 58.0) {
                     VStack {
-                        ProgressView(value: 1.0)
-                        ProgressView(value: 0.75)
-                        ProgressView(value: 0.5)
+                        HorizontalProgressBar()
+                        
                     }
                     .opacity(showBars ? 1 : 0)
                     .frame(width: 64, height: 96)
