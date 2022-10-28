@@ -19,16 +19,13 @@ struct ContentView: View {
                         HorizontalProgressBar()
                         
                     }
-                    
-                    VStack {
-                        Image("Ciclo_Placeholder")
-                        Text("Menstruação")
-                    }
+                    .opacity(showBars ? 1 : 0)
+                    .frame(width: 64, height: 96)
+                    DayCounterView()
                     Image("BSonoAtivado")
                 }
                 VStack {
                     Text("To falando alguma coisa aqui")
-                        
                 }
                 .frame(width: 345, height: 110)
                 .background(.gray)
