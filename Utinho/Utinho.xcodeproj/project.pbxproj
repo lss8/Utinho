@@ -14,6 +14,7 @@
 		8F77EAD3290854F200BAB11A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F77EAD2290854F200BAB11A /* Assets.xcassets */; };
 		8F77EAD6290854F200BAB11A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F77EAD5290854F200BAB11A /* Preview Assets.xcassets */; };
 		948BEEE4290A3F35009FA582 /* HorizontalProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948BEEE3290A3F35009FA582 /* HorizontalProgressBar.swift */; };
+		EB5D6812290CB15E0039E4FC /* StatisticBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5D6811290CB15E0039E4FC /* StatisticBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		8F77EAD2290854F200BAB11A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8F77EAD5290854F200BAB11A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		948BEEE3290A3F35009FA582 /* HorizontalProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalProgressBar.swift; sourceTree = "<group>"; };
+		EB5D6811290CB15E0039E4FC /* StatisticBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 		8F77EACD290854F100BAB11A /* Utinho */ = {
 			isa = PBXGroup;
 			children = (
+				EB5D6810290CA2720039E4FC /* Controllers */,
 				8F77EACE290854F100BAB11A /* UtinhoApp.swift */,
 				8F77EAD0290854F100BAB11A /* ContentView.swift */,
 				948BEEE3290A3F35009FA582 /* HorizontalProgressBar.swift */,
@@ -74,6 +77,14 @@
 				8F77EAD5290854F200BAB11A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EB5D6810290CA2720039E4FC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EB5D6811290CB15E0039E4FC /* StatisticBarController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				948BEEE4290A3F35009FA582 /* HorizontalProgressBar.swift in Sources */,
+				EB5D6812290CB15E0039E4FC /* StatisticBarController.swift in Sources */,
 				8F77EAD1290854F100BAB11A /* ContentView.swift in Sources */,
 				8F102D6F290B260E00C97744 /* DayCounterView.swift in Sources */,
 				8F77EACF290854F100BAB11A /* UtinhoApp.swift in Sources */,
