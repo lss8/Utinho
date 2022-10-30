@@ -61,7 +61,9 @@ struct HorizontalProgressBar: View {
                 
                 HStack {
                     Image("IconeLazer")
+                        
                 }.frame(width: 63.0, height: 28.0)
+                    
             }
         }
     }
