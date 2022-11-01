@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct UtinhoApp: App {
-    let defaults = UserDefaults.standard
+    var stat = StatisticBarController()
     var body: some Scene {
         WindowGroup {
             ContentView()
