@@ -13,8 +13,6 @@ struct SelectedKitButton: ButtonStyle{
             .frame(width: 97, height: 35)
             .background(Color.init(hex: "C74A4A"))
             .foregroundColor(Color.white)
-            
-    
     }
 }
 
@@ -28,7 +26,6 @@ struct ContentView: View {
                 HStack(spacing: 58.0) {
                     VStack {
                         HorizontalProgressBar()
-                        
                     }
                     .opacity(showBars ? 1 : 0)
                     .frame(width: 64, height: 96)
@@ -56,8 +53,6 @@ struct ContentView: View {
                         showBars.toggle()
                     }
                     .sheet(isPresented: $showSheet) {
-                        
-                       
                             KitSobrevivenciaView()
                             .presentationDetents([.fraction(0.40)])
                         }
