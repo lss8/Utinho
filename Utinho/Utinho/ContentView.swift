@@ -58,6 +58,7 @@ struct ContentView: View {
                         showBars.toggle()
                     }
                     .sheet(isPresented: $showSheet) {
+                        
                        
                             KitSobrevivenciaView()
                             .presentationDetents([.fraction(0.40)])

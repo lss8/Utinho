@@ -7,67 +7,130 @@
 
 import SwiftUI
 
+
 struct KitSobrevivenciaView: View {
+    @State private var saudeIsSelected = true
+    @State private var nutriçaoIsSelected = false
+    @State private var lazerIsSelected = false
     
-    var images: [String] = ["Anticoncepcional", "Camisinha", "Calcinha", "Coletor"]
-    var images2: [String] = ["Absorvente", "Pilula", "Compressa", "RemedioColica"]
+    
+    
+    var imagesSaude: [String] = ["Anticoncepcional", "Camisinha", "Calcinha", "Coletor"]
+    var imagesSaude2: [String] = ["Absorvente", "Pilula", "Compressa", "RemedioColica"]
+    var imagesNutricao1: [String] = ["Camisinha","Camisinha","Camisinha","Camisinha"]
+    var imagesNutricao2: [String] = ["Coletor","Coletor","Coletor","Coletor"]
+    var imagesLazer1: [String] = ["Compressa","Compressa","Compressa","Compressa"]
+    var imagesLazer2: [String] = ["Anticoncepcional","Anticoncepcional","Anticoncepcional","Anticoncepcional"]
     
     var body: some View {
         
         VStack {
+            
+            //MARK: Stack botões
             HStack {
-                Button(action: {}){
-                    HStack{
-                        Image("IconeSaude")
-                        Text("Saúde")
+                ButtonKitSelect(
+                    isSelected: $saudeIsSelected,
+                    backgroundColor: Color.init(hex: "A31017"),
+                    textColor: .white,
+                    textButton: "Saúde",
+                    imageButton1: "IconeSaude",
+                    imageButton2: "IconeSaudeRed")
+                .onTapGesture {
+                    if (saudeIsSelected == false){
+                        saudeIsSelected.toggle() // aqui troca de true p false, e vice e versa
+                        
+                        if saudeIsSelected {
+                            nutriçaoIsSelected = false
+                            lazerIsSelected = false
+                        }
                     }
+                    
                 }
-                .foregroundColor(Color.white)
-                .frame(width: 97, height: 35)
-                .background(Color.init(hex: "A31017"))
-                .cornerRadius(10)
                 
-                Button(action: {}){
-                    HStack{
-                        Image("IconeAlimentacaoRed")
-                        Text("Nutrição")
+                ButtonKitSelect(
+                    isSelected: $nutriçaoIsSelected,
+                    backgroundColor: Color.init(hex: "A31017"),
+                    textColor: .white,
+                    textButton: "Nutrição",
+                    imageButton1: "IconeAlimentacao",
+                    imageButton2: "IconeAlimentacaoRed")
+                .onTapGesture {
+                    if(nutriçaoIsSelected == false){
+                        nutriçaoIsSelected.toggle()
+                        
+                        if nutriçaoIsSelected {
+                            saudeIsSelected = false
+                            lazerIsSelected = false
+                        }
                     }
+                    
                 }
-                .foregroundColor(Color.init(hex: "A31017"))
-                .frame(width: 97, height: 35)
-                .border(Color.init(hex: "A31017"))
-                .cornerRadius(10)
                 
-                Button(action: {}){
-                    HStack{
-                        Image("IconeLazerRed")
-                        Text("Lazer")
+                ButtonKitSelect(
+                    isSelected: $lazerIsSelected,
+                    backgroundColor: Color.init(hex: "A31017"),
+                    textColor: .white,
+                    textButton: "Lazer",
+                    imageButton1: "IconeLazer",
+                    imageButton2: "IconeLazerRed")
+                .onTapGesture {
+                    if(!lazerIsSelected){ // mesma coisa de fazer um if(lazerIsSelected == false)
+                        lazerIsSelected.toggle()
+                        
+                        if lazerIsSelected {
+                            saudeIsSelected = false
+                            nutriçaoIsSelected = false
+                        }
+                        
                     }
+                    
                 }
-                .foregroundColor(Color.init(hex: "A31017"))
-                .frame(width: 97, height: 35)
-                .border(Color.init(hex: "A31017"))
-                .cornerRadius(14)
                 
-                
+    
+                /*
+                 MARK: OPERADOR TERNÁRIO
+                 x ? z : y
+                 
+                 if (x == true){
+                        z
+                 }else{
+                    if()
+                 }
+                 
+                 //(image: saudeIsSelected ? imagesSaude[index] : (nutricaoIsSelected ? imagesNutricao : imagesAlmientacao) )
+                 
+                 if(saudeIsSeleted){
+                    image: imagesSaude[index]
+                 }else{
+                    if(nutricaoIsSelected){
+                        imagesNutricao
+                    }else{
+                        imagesAlimentacao
+                    }
+                 }
+                 
+                 image: saudeIsSeleted ? imagesSaude[index] : nutricaoIsSelected ? imagesNutricao[index] : imagesAlimentacao[index]
+                 */
             }
             
+            //MARK: Stack de itens
             VStack {
                 HStack {
                     ForEach (0..<4, id: \.self) { index in
-                        ItemKit(image: images[index])
+                        ItemKit(image: saudeIsSelected ? imagesSaude[index] : nutriçaoIsSelected ? imagesNutricao1[index] : imagesLazer1[index])
+                    
                     }
                 }
                 
                 HStack {
                     ForEach (0..<4, id: \.self) { index in
-                        ItemKit(image: images2[index])
+                        ItemKit(image: saudeIsSelected ? imagesSaude2[index] : nutriçaoIsSelected ? imagesNutricao2[index] : imagesLazer2[index])
                     }
                 }
                 
             }
             
-            
+            //MARK: Stack da seta
             HStack{
                 Image(systemName: "chevron.down")
                     .padding()
