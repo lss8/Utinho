@@ -7,6 +7,17 @@
 
 import SwiftUI
 
+struct SelectedKitButton: ButtonStyle{
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .frame(width: 97, height: 35)
+            .background(Color.init(hex: "C74A4A"))
+            .foregroundColor(Color.white)
+            
+    
+    }
+}
+
 struct ContentView: View {
     @State private var showSheet: Bool = false
     @State private var showBars: Bool = false
@@ -29,9 +40,11 @@ struct ContentView: View {
                 }
                 .frame(width: 345, height: 110)
                 .background(.gray)
+                
                 Image("Utinho")
                     .imageScale(.large)
                     .foregroundColor(.accentColor)
+                
                 HStack(spacing: 24.0) {
                     Image("BMinigameAtivado")
                     Image("BGinecoAtivado")
@@ -43,21 +56,28 @@ struct ContentView: View {
                         showBars.toggle()
                     }
                     .sheet(isPresented: $showSheet) {
-                        Text("A sheet abriu")
-                            .presentationDetents([.fraction(0.28)])
-                    }
+                        
+                       
+                            KitSobrevivenciaView()
+                            .presentationDetents([.fraction(0.40)])
+                        }
                 }
-                .frame(width: 345, height: 80)
-                .background(.gray)
+                
+                }
+//                .frame(width: 345, height: 80)
+//                .background(.red)
             }
             .padding()
         }
-        //.background(.red)
+        
     }
-}
+
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
 }
+
