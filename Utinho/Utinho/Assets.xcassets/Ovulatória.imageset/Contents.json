@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "PopupOvulatoria.png",
+      "filename" : "Ovulatória.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "PopupOvulatoria@2x.png",
+      "filename" : "Ovulatória@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "PopupOvulatoria@3x.png",
+      "filename" : "Ovulatória@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

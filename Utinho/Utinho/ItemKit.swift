@@ -55,9 +55,9 @@ struct ItemKit: View {
             lazerProgress.value = 30.0
             print("2")
         case "Calcinha":
-            saudeProgress.value = 60.0
+            saudeProgress.value = 30.0
             nutricaoProgress.value = 40.0
-            lazerProgress.value = 80.0
+            lazerProgress.value = 20.0
             print("3")
         case "Coletor":
             print("4")
@@ -70,7 +70,9 @@ struct ItemKit: View {
         case "RemedioColica":
             print("8")
         default:
-            print("clicou em outro")
+            saudeProgress.value += 10.0
+            nutricaoProgress.value -= 5.0
+            lazerProgress.value += 15.0
         }
     }
     

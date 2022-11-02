@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CicloMenstrualView: View {
     @Binding var dia: Int
-    @State private var fase: String = "Menstruação"
+    @ObservedObject var fase: FaseDoCiclo
     @State var showPopUp: Bool = false
         
     var body: some View {
@@ -33,41 +33,23 @@ struct CicloMenstrualView: View {
                 .rotationEffect(.degrees(-90))
                 .animation(.easeOut, value: dia)
             Text("\(dia)/28")
+                .bold()
+                .foregroundColor(.white)
         }
-        Button(changeFase(dia: dia)) {
+        Button(fase.fase) {
             showPopUp = true
         }
         .foregroundColor(.white)
+        .bold()
         .popover(isPresented: $showPopUp) {
-            Image(changeFase(dia: dia))
+            Image(fase.fase)
                 .background(BackgroundClearView())
                 .onTapGesture {
                     showPopUp = false
                 }
         }
-        
     }
-    
-    func changeFase(dia: Int) -> String {
-        var faseMenstrual: String
-        
-        if dia >= 1 && dia <= 5 {
-            faseMenstrual = "Menstruação"
-        }
-        else if dia >= 6 && dia <= 11 {
-            faseMenstrual = "Folicular"
-        }
-        else if dia >= 12 && dia <= 16 {
-            faseMenstrual = "Ovularória"
-        }
-        else if dia >= 17 && dia <= 23 {
-            faseMenstrual = "Lútea"
-        }
-        else {
-            faseMenstrual = "TPM"
-        }
-        return faseMenstrual
-    }
+
 }
 
 struct BackgroundClearView: UIViewRepresentable {

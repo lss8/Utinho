@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "PopupTPM.png",
+      "filename" : "TPM.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "PopupTPM@2x.png",
+      "filename" : "TPM@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "PopupTPM@3x.png",
+      "filename" : "TPM@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

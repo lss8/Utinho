@@ -10,10 +10,11 @@ import SwiftUI
 struct DayCounterView: View {
     @State var date = Date()
     @State var dia: Int = 1
+    @ObservedObject var fase: FaseDoCiclo
     
     var body: some View {
         VStack {
-            CicloMenstrualView(dia: $dia)
+            CicloMenstrualView(dia: $dia, fase: fase)
             //Text("\(timeString(date: date))")
                 .onAppear(perform: {let _ = self.updateTimer})
         }
@@ -41,6 +42,7 @@ struct DayCounterView: View {
              else {
                  dia = 1
              }
+             defineFase(FASE: changeFase(dia: dia))
                                  
                                })
     }
@@ -55,6 +57,31 @@ struct DayCounterView: View {
         if dia > 28 {
             dia = 1
         }
+    }
+    
+    public func defineFase(FASE: String) {
+        fase.fase = FASE
+    }
+    
+    func changeFase(dia: Int) -> String {
+        var faseMenstrual: String
+        
+        if dia >= 1 && dia <= 5 {
+            faseMenstrual = "Menstruação"
+        }
+        else if dia >= 6 && dia <= 11 {
+            faseMenstrual = "Folicular"
+        }
+        else if dia >= 12 && dia <= 16 {
+            faseMenstrual = "Ovulatória"
+        }
+        else if dia >= 17 && dia <= 23 {
+            faseMenstrual = "Lútea"
+        }
+        else {
+            faseMenstrual = "TPM"
+        }
+        return faseMenstrual
     }
     
 }

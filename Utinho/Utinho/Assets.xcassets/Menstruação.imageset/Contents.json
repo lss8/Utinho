@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "PopupMenstruacao.png",
+      "filename" : "Menstruação.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "PopupMenstruacao@2x.png",
+      "filename" : "Menstruação@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "PopupMenstruacao@3x.png",
+      "filename" : "Menstruação@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "PopupLutea.png",
+      "filename" : "Lútea.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "PopupLutea@2x.png",
+      "filename" : "Lútea@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "PopupLutea@3x.png",
+      "filename" : "Lútea@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
