@@ -12,17 +12,13 @@ struct KitSobrevivenciaView: View {
     @State private var saudeIsSelected = true
     @State private var nutriçaoIsSelected = false
     @State private var lazerIsSelected = false
-    @ObservedObject var saudeProgress: BarProgressSaude
-    @ObservedObject var nutricaoProgress: BarProgressSaude
-    @ObservedObject var lazerProgress: BarProgressSaude
-    
     
     var imagesSaude: [String] = ["Anticoncepcional", "Camisinha", "Calcinha", "Coletor"]
     var imagesSaude2: [String] = ["Absorvente", "Pilula", "Compressa", "RemedioColica"]
-    var imagesNutricao1: [String] = ["Agua","Cha","Cupnoodles","Abacate"]
-    var imagesNutricao2: [String] = ["Chocolate","Banana","Sushi","Cafe"]
-    var imagesLazer1: [String] = ["Games","Livro","Spaday","Piscininha"]
-    var imagesLazer2: [String] = ["Festa","Datezinho","Bike","Netflix"]
+    var imagesNutricao1: [String] = ["Camisinha","Camisinha","Camisinha","Camisinha"]
+    var imagesNutricao2: [String] = ["Coletor","Coletor","Coletor","Coletor"]
+    var imagesLazer1: [String] = ["Compressa","Compressa","Compressa","Compressa"]
+    var imagesLazer2: [String] = ["Anticoncepcional","Anticoncepcional","Anticoncepcional","Anticoncepcional"]
     
     var body: some View {
         
@@ -93,14 +89,14 @@ struct KitSobrevivenciaView: View {
             VStack {
                 HStack {
                     ForEach (0..<4, id: \.self) { index in
-                        ItemKit(image: saudeIsSelected ? imagesSaude[index] : nutriçaoIsSelected ? imagesNutricao1[index] : imagesLazer1[index], saudeProgress: saudeProgress, nutricaoProgress: nutricaoProgress, lazerProgress: lazerProgress)
+                        ItemKit(image: saudeIsSelected ? imagesSaude[index] : nutriçaoIsSelected ? imagesNutricao1[index] : imagesLazer1[index])
                     
                     }
                 }
                 
                 HStack {
                     ForEach (0..<4, id: \.self) { index in
-                        ItemKit(image: saudeIsSelected ? imagesSaude2[index] : nutriçaoIsSelected ? imagesNutricao2[index] : imagesLazer2[index], saudeProgress: saudeProgress, nutricaoProgress: nutricaoProgress, lazerProgress: lazerProgress)
+                        ItemKit(image: saudeIsSelected ? imagesSaude2[index] : nutriçaoIsSelected ? imagesNutricao2[index] : imagesLazer2[index])
                     }
                 }
                 
@@ -121,7 +117,7 @@ struct KitSobrevivenciaView: View {
     
     struct KitSobrevivenciaView_Previews: PreviewProvider {
         static var previews: some View {
-            KitSobrevivenciaView(saudeProgress: BarProgressSaude(), nutricaoProgress: BarProgressSaude(), lazerProgress: BarProgressSaude())
+            KitSobrevivenciaView()
         }
     }
 }

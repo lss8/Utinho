@@ -7,35 +7,68 @@
 
 import SwiftUI
 
-
 struct HorizontalProgressBar: View {
     
-    @ObservedObject var saudeBar: BarProgressSaude
-    @ObservedObject var alimentacaoBar: BarProgressSaude
-    @ObservedObject var lazerBar: BarProgressSaude
+    var width: CGFloat = 63.0
+    var height: CGFloat = 28.0
+    var indiceSaude: Double = 50.0
+    var indiceAlimentacao: Double = 50.0
+    var indiceLazer: Double = 50.0
     
     var body: some View {
         
+        let multiplicador = width / 100
+        
+    
         VStack {
             
-            HorizontalBar(
-                imageBar: "IconeSaude",
-                indiceBar: saudeBar)
+            ZStack(alignment: .leading) {
+                RoundedRectangle(cornerRadius: 8.13, style: .continuous)
+                    .frame(width: width, height: height)
+                    .foregroundColor(Color.init(hex: "DC8B86").opacity(0.42))
+                
+                RoundedRectangle(cornerRadius: 8.13, style: .continuous)
+                    .frame(width: indiceSaude * multiplicador, height: 28.0)
+                    .foregroundColor(Color.init(hex: "328AA8"))
+                
+                HStack {
+                    Image("IconeSaude")
+                }.frame(width: 63.0, height: 28.0)
             }
-            HorizontalBar(
-                imageBar: "IconeAlimentacao",
-                indiceBar: alimentacaoBar)
-        
-            HorizontalBar(
-                imageBar: "IconeLazer",
-                indiceBar: lazerBar)
             
-            
+            ZStack(alignment: .leading) {
+                RoundedRectangle(cornerRadius: 8.13, style: .continuous)
+                    .frame(width: width, height: height)
+                .foregroundColor(Color.init(hex: "DC8B86").opacity(0.42))
+
+                RoundedRectangle(cornerRadius: 8.13, style: .continuous)
+                    .frame(width: indiceAlimentacao * multiplicador, height: 28.0)
+                    .foregroundColor(Color.init(hex: "77C3DD"))
+                
+                HStack {
+                    Image("IconeAlimentacao")
+                }.frame(width: 63.0, height: 28.0)
             }
             
+            ZStack(alignment: .leading) {
+                RoundedRectangle(cornerRadius: 8.13, style: .continuous)
+                    .frame(width: width, height: height)
+                .foregroundColor(Color.init(hex: "DC8B86").opacity(0.42))
+
+                RoundedRectangle(cornerRadius: 8.13, style: .continuous)
+                    .frame(width: indiceLazer * multiplicador, height: 28.0)
+                    .foregroundColor(Color.init(hex: "77C3DD"))
+                
+                HStack {
+                    Image("IconeLazer")
+                        
+                }.frame(width: 63.0, height: 28.0)
+                    
+            }
         }
         
-
+    }
+}
 
 /*struct HorizontalProgressBar_Previews: PreviewProvider {
     static var previews: some View {
@@ -69,5 +102,3 @@ extension Color {
         )
     }
 }
-
-
