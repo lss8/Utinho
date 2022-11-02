@@ -13,8 +13,6 @@ struct KitSobrevivenciaView: View {
     @State private var nutriçaoIsSelected = false
     @State private var lazerIsSelected = false
     
-    
-    
     var imagesSaude: [String] = ["Anticoncepcional", "Camisinha", "Calcinha", "Coletor"]
     var imagesSaude2: [String] = ["Absorvente", "Pilula", "Compressa", "RemedioColica"]
     var imagesNutricao1: [String] = ["Camisinha","Camisinha","Camisinha","Camisinha"]
@@ -85,32 +83,6 @@ struct KitSobrevivenciaView: View {
                     }
                     
                 }
-                
-    
-                /*
-                 MARK: OPERADOR TERNÁRIO
-                 x ? z : y
-                 
-                 if (x == true){
-                        z
-                 }else{
-                    if()
-                 }
-                 
-                 //(image: saudeIsSelected ? imagesSaude[index] : (nutricaoIsSelected ? imagesNutricao : imagesAlmientacao) )
-                 
-                 if(saudeIsSeleted){
-                    image: imagesSaude[index]
-                 }else{
-                    if(nutricaoIsSelected){
-                        imagesNutricao
-                    }else{
-                        imagesAlimentacao
-                    }
-                 }
-                 
-                 image: saudeIsSeleted ? imagesSaude[index] : nutricaoIsSelected ? imagesNutricao[index] : imagesAlimentacao[index]
-                 */
             }
             
             //MARK: Stack de itens

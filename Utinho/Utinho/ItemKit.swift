@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ItemKit: View {
     var image: String
+    
     var body: some View {
         
         ZStack{
@@ -18,6 +19,9 @@ struct ItemKit: View {
                 .foregroundColor(Color.gray.opacity(0.3))
             
             Image(image)
+                .onTapGesture {
+                    addToBar(item: image)
+                }
             
             ZStack(alignment: .bottomTrailing){
                 RoundedRectangle(cornerRadius: 1)
@@ -32,12 +36,30 @@ struct ItemKit: View {
             }
             
         }
-        
-        
-        
-        
     }
     
+    public func addToBar(item: String) {
+        switch item {
+        case "Anticoncepcional":
+            print("1")
+        case "Camisinha":
+            print("2")
+        case "Calcinha":
+            print("3")
+        case "Coletor":
+            print("4")
+        case "Absorvente":
+            print("5")
+        case "Pilula":
+            print("6")
+        case "Compressa":
+            print("7")
+        case "RemedioColica":
+            print("8")
+        default:
+            print("clicou em outro")
+        }
+    }
     
     struct ItemKit_Previews: PreviewProvider {
         static var previews: some View {

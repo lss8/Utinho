@@ -11,9 +11,9 @@ struct HorizontalProgressBar: View {
     
     var width: CGFloat = 63.0
     var height: CGFloat = 28.0
-    var indiceSaude: CGFloat = 33.0
-    var indiceAlimentacao: CGFloat = 53.0
-    var indiceLazer: CGFloat = 73.0
+    var indiceSaude: Double = 50.0
+    var indiceAlimentacao: Double = 50.0
+    var indiceLazer: Double = 50.0
     
     var body: some View {
         
@@ -66,20 +66,15 @@ struct HorizontalProgressBar: View {
                     
             }
         }
+        
     }
 }
 
-
-
-
-
-
-
-struct HorizontalProgressBar_Previews: PreviewProvider {
+/*struct HorizontalProgressBar_Previews: PreviewProvider {
     static var previews: some View {
         HorizontalProgressBar()
     }
-}
+}*/
 
 extension Color {
     init(hex: String) {
