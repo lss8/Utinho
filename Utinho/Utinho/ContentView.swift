@@ -17,6 +17,10 @@ struct SelectedKitButton: ButtonStyle{
 }
 
 struct ContentView: View {
+    //
+    @StateObject var saudeProgress = BarProgressSaude() // instanciei a classe aqui criando um objeto
+    @StateObject var nutricaoProgress = BarProgressSaude()
+    @StateObject var lazerProgress = BarProgressSaude()
     @State private var showSheet: Bool = false
     
     var body: some View {
@@ -37,33 +41,37 @@ struct ContentView: View {
                     }
                     .padding(0.0)
                     VStack {
-                        Text("To falando alguma coisa aqui")
+                        HorizontalProgressBar(saudeBar: saudeProgress, alimentacaoBar: nutricaoProgress, lazerBar: lazerProgress)
                     }
-                    .frame(width: 345, height: 110)
-                    .background(.gray)
-                    Image("Utinho")
-                        .imageScale(.large)
-                        .foregroundColor(.accentColor)
-                    HStack(spacing: 24.0) {
+                    .opacity(showBars ? 1 : 0)
+                    .frame(width: 64, height: 96)
+                    DayCounterView()
+                    Image("BSonoAtivado")
+                }
+                VStack {
+                    Text("To falando alguma coisa aqui")
+                }
+                .frame(width: 345, height: 110)
+                .background(.gray)
+                
+                HStack(spacing: 24.0) {
                         MinigameBotaoView()
                         GinecoBotaoView()
-                    }
-                    VStack(spacing: 12.0) {
-                        Button() {
+                }
+                
+                UtiView()
+                
+                VStack(spacing: 12.0) {
+                    Button() {
                             showSheet.toggle()
                         }label: {
                             Image ("KitBar")
                                 .resizable()
                                 .edgesIgnoringSafeArea(.all)
-                        }
-                        .padding(0.0)
-                        .frame(height: 80.0)
-                        .sheet(isPresented: $showSheet) {
-                                KitSobrevivenciaView()
-                                .presentationDetents([.fraction(0.40)])
-                            }
                     }
-                    
+                    .sheet(isPresented: $showSheet) {
+                        KitSobrevivenciaView(saudeProgress : saudeProgress, nutricaoProgress: nutricaoProgress, lazerProgress: lazerProgress)
+                            .presentationDetents([.fraction(0.40)])          
                 }
                 .padding(.top, 32.0)
     //                .frame(width: 345, height: 80)
@@ -83,4 +91,9 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+class BarProgressSaude: ObservableObject { // comecei aqui criando a classe
+    @Published var value = 40.0       // aqui inicializa o valor da barra
+}
+
 

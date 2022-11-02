@@ -23,7 +23,7 @@ struct CicloMenstrualView: View {
             Circle()
                 .trim(from: 0, to: (1/28)*Double(dia))
                 .stroke(
-                    Color.pink,
+                    Color.init(hex: "77C3DD"),
                     style: StrokeStyle (
                         lineWidth: 10,
                         lineCap: .round
