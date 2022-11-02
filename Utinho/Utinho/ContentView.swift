@@ -18,51 +18,59 @@ struct SelectedKitButton: ButtonStyle{
 
 struct ContentView: View {
     @State private var showSheet: Bool = false
-    @State private var showBars: Bool = false
     
     var body: some View {
-        VStack() {
-            VStack(spacing: 32.0) {
-                HStack(spacing: 58.0) {
-                    VStack {
-                        HorizontalProgressBar()
-                    }
-                    .opacity(showBars ? 1 : 0)
-                    .frame(width: 64, height: 96)
-                    DayCounterView()
-                    Image("BSonoAtivado")
-                }
-                VStack {
-                    Text("To falando alguma coisa aqui")
-                }
-                .frame(width: 345, height: 110)
-                .background(.gray)
-                
-                Image("Utinho")
-                    .imageScale(.large)
-                    .foregroundColor(.accentColor)
-                
-                HStack(spacing: 24.0) {
-                    Image("BMinigameAtivado")
-                    Image("BGinecoAtivado")
-                }
-                VStack(spacing: 12.0) {
-                    Image(systemName: "chevron.up")
-                    Button("Kit de sobrevivência uterina") {
-                        showSheet.toggle()
-                        showBars.toggle()
-                    }
-                    .sheet(isPresented: $showSheet) {
-                            KitSobrevivenciaView()
-                            .presentationDetents([.fraction(0.40)])
+        ZStack {
+            Image("Background_Menstruacao")
+                .resizable()
+                .scaledToFill()
+                .edgesIgnoringSafeArea(.all)
+            VStack() {
+                VStack(alignment: .center, spacing: 24.0) {
+                    HStack(alignment: .center, spacing: 58.0) {
+                        VStack {
+                            HorizontalProgressBar()
                         }
+                        .frame(width: 64, height: 96)
+                        DayCounterView()
+                        SleepBotaoView()
+                    }
+                    .padding(0.0)
+                    VStack {
+                        Text("To falando alguma coisa aqui")
+                    }
+                    .frame(width: 345, height: 110)
+                    .background(.gray)
+                    Image("Utinho")
+                        .imageScale(.large)
+                        .foregroundColor(.accentColor)
+                    HStack(spacing: 24.0) {
+                        MinigameBotaoView()
+                        GinecoBotaoView()
+                    }
+                    VStack(spacing: 12.0) {
+                        Button() {
+                            showSheet.toggle()
+                        }label: {
+                            Image ("KitBar")
+                                .resizable()
+                                .edgesIgnoringSafeArea(.all)
+                        }
+                        .padding(0.0)
+                        .frame(height: 80.0)
+                        .sheet(isPresented: $showSheet) {
+                                KitSobrevivenciaView()
+                                .presentationDetents([.fraction(0.40)])
+                            }
+                    }
+                    
                 }
-                
+                .padding(.top, 32.0)
+    //                .frame(width: 345, height: 80)
+    //                .background(.red)
                 }
-//                .frame(width: 345, height: 80)
-//                .background(.red)
-            }
-            .padding()
+                .padding()
+        }
         }
         
     }
