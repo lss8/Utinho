@@ -14,6 +14,9 @@
 		8F77EAD1290854F100BAB11A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F77EAD0290854F100BAB11A /* ContentView.swift */; };
 		8F77EAD3290854F200BAB11A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F77EAD2290854F200BAB11A /* Assets.xcassets */; };
 		8F77EAD6290854F200BAB11A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F77EAD5290854F200BAB11A /* Preview Assets.xcassets */; };
+		8FC88A8029121B98004C37B0 /* GinecoBotaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC88A7F29121B98004C37B0 /* GinecoBotaoView.swift */; };
+		8FC88A8229121BCA004C37B0 /* MinigameBotaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC88A8129121BCA004C37B0 /* MinigameBotaoView.swift */; };
+		8FC88A8429121BF3004C37B0 /* SleepBotaoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC88A8329121BF3004C37B0 /* SleepBotaoView.swift */; };
 		948BEEE4290A3F35009FA582 /* HorizontalProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948BEEE3290A3F35009FA582 /* HorizontalProgressBar.swift */; };
 		948BEEE6290C7553009FA582 /* KitSobrevivenciaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948BEEE5290C7553009FA582 /* KitSobrevivenciaView.swift */; };
 		948BEEE8290CB306009FA582 /* ItemKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948BEEE7290CB306009FA582 /* ItemKit.swift */; };
@@ -31,6 +34,9 @@
 		8F77EAD0290854F100BAB11A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8F77EAD2290854F200BAB11A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8F77EAD5290854F200BAB11A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8FC88A7F29121B98004C37B0 /* GinecoBotaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GinecoBotaoView.swift; sourceTree = "<group>"; };
+		8FC88A8129121BCA004C37B0 /* MinigameBotaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinigameBotaoView.swift; sourceTree = "<group>"; };
+		8FC88A8329121BF3004C37B0 /* SleepBotaoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepBotaoView.swift; sourceTree = "<group>"; };
 		948BEEE3290A3F35009FA582 /* HorizontalProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalProgressBar.swift; sourceTree = "<group>"; };
 		948BEEE5290C7553009FA582 /* KitSobrevivenciaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitSobrevivenciaView.swift; sourceTree = "<group>"; };
 		948BEEE7290CB306009FA582 /* ItemKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemKit.swift; sourceTree = "<group>"; };
@@ -80,6 +86,9 @@
 				8F102D6C290B080500C97744 /* CicloMenstrualView.swift */,
 				8F102D6E290B260E00C97744 /* DayCounterView.swift */,
 				8F5598CC2912EF66001A2C85 /* UtiView.swift */,
+				8FC88A7F29121B98004C37B0 /* GinecoBotaoView.swift */,
+				8FC88A8129121BCA004C37B0 /* MinigameBotaoView.swift */,
+				8FC88A8329121BF3004C37B0 /* SleepBotaoView.swift */,
 				8F77EAD2290854F200BAB11A /* Assets.xcassets */,
 				8F77EAD4290854F200BAB11A /* Preview Content */,
 			);
@@ -164,6 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FC88A8429121BF3004C37B0 /* SleepBotaoView.swift in Sources */,
 				948BEEE8290CB306009FA582 /* ItemKit.swift in Sources */,
 				94BE3521290DCB580019B338 /* ContadorItens.swift in Sources */,
 				948BEEE6290C7553009FA582 /* KitSobrevivenciaView.swift in Sources */,
@@ -173,7 +183,9 @@
 				94B9EFCD2910897F001E4CCC /* ButtonKitSelect.swift in Sources */,
 				8F102D6F290B260E00C97744 /* DayCounterView.swift in Sources */,
 				94B9EFCF2911BE40001E4CCC /* HorizontalBar.swift in Sources */,
+				8FC88A8029121B98004C37B0 /* GinecoBotaoView.swift in Sources */,
 				8F77EACF290854F100BAB11A /* UtinhoApp.swift in Sources */,
+				8FC88A8229121BCA004C37B0 /* MinigameBotaoView.swift in Sources */,
 				8F102D6D290B080500C97744 /* CicloMenstrualView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -15,7 +15,7 @@ struct DayCounterView: View {
         VStack {
             CicloMenstrualView(dia: $dia)
             //Text("\(timeString(date: date))")
-                //.onAppear(perform: {let _ = self.updateTimer})
+                .onAppear(perform: {let _ = self.updateTimer})
         }
     }
 
@@ -34,7 +34,14 @@ struct DayCounterView: View {
          Timer.scheduledTimer(withTimeInterval: 1, repeats: true,
                               block: {_ in
                                  self.date = Date()
-                                 changeDay()
+                                 //changeDay()
+             if dia < 28 {
+                 dia += 1
+             }
+             else {
+                 dia = 1
+             }
+                                 
                                })
     }
 
