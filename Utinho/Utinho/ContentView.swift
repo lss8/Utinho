@@ -17,6 +17,10 @@ struct SelectedKitButton: ButtonStyle{
 }
 
 struct ContentView: View {
+    //
+    @StateObject var saudeProgress = BarProgressSaude() // instanciei a classe aqui criando um objeto
+    @StateObject var nutricaoProgress = BarProgressSaude()
+    @StateObject var lazerProgress = BarProgressSaude()
     @State private var showSheet: Bool = false
     @State private var showBars: Bool = false
     
@@ -25,7 +29,7 @@ struct ContentView: View {
             VStack(spacing: 32.0) {
                 HStack(spacing: 58.0) {
                     VStack {
-                        HorizontalProgressBar()
+                        HorizontalProgressBar(saudeBar: saudeProgress, alimentacaoBar: nutricaoProgress, lazerBar: lazerProgress)
                     }
                     .opacity(showBars ? 1 : 0)
                     .frame(width: 64, height: 96)
@@ -53,7 +57,7 @@ struct ContentView: View {
                         showBars.toggle()
                     }
                     .sheet(isPresented: $showSheet) {
-                            KitSobrevivenciaView()
+                        KitSobrevivenciaView(saudeProgress : saudeProgress, nutricaoProgress: nutricaoProgress, lazerProgress: lazerProgress)
                             .presentationDetents([.fraction(0.40)])
                         }
                 }
@@ -75,4 +79,9 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+class BarProgressSaude: ObservableObject { // comecei aqui criando a classe
+    @Published var value = 40.0       // aqui inicializa o valor da barra
+}
+
 

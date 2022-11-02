@@ -17,7 +17,7 @@ struct ContadorItens: View {
             
             
             HStack{
-                Text("1")
+                Text("5")
                     .foregroundColor(Color.init(hex: "A31017"))
                     .font(.system(size: 13))
                 Image("GotaSangue")

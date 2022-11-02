@@ -22,7 +22,7 @@ struct CicloMenstrualView: View {
             Circle() // 2
                 .trim(from: 0, to: (1/28)*Double(dia))
                 .stroke(
-                    Color.pink,
+                    Color.init(hex: "77C3DD"),
                     style: StrokeStyle (
                         lineWidth: 10,
                         lineCap: .round
@@ -44,7 +44,7 @@ struct CicloMenstrualView: View {
         }
         else if dia >= 6 && dia <= 16 {
             faseMenstrual = "Ovulação"
-        }
+        }   
         else {
             faseMenstrual = "Lútea"
         }

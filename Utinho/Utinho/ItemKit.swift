@@ -10,6 +10,10 @@ import SwiftUI
 struct ItemKit: View {
     var image: String
     
+    @ObservedObject var saudeProgress: BarProgressSaude
+    @ObservedObject var nutricaoProgress: BarProgressSaude
+    @ObservedObject var lazerProgress: BarProgressSaude
+    
     var body: some View {
         
         ZStack{
@@ -41,10 +45,19 @@ struct ItemKit: View {
     public func addToBar(item: String) {
         switch item {
         case "Anticoncepcional":
+            saudeProgress.value = saudeProgress.value - 10.0
+            nutricaoProgress.value = 70.0
+            lazerProgress.value = 100.0
             print("1")
         case "Camisinha":
+            saudeProgress.value = 50.0
+            nutricaoProgress.value = 30.0
+            lazerProgress.value = 30.0
             print("2")
         case "Calcinha":
+            saudeProgress.value = 60.0
+            nutricaoProgress.value = 40.0
+            lazerProgress.value = 80.0
             print("3")
         case "Coletor":
             print("4")
@@ -63,7 +76,7 @@ struct ItemKit: View {
     
     struct ItemKit_Previews: PreviewProvider {
         static var previews: some View {
-            ItemKit(image: "Compressa")
+            ItemKit(image: "Compressa", saudeProgress: BarProgressSaude(), nutricaoProgress: BarProgressSaude(), lazerProgress: BarProgressSaude())
         }
     }
 }
