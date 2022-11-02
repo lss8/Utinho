@@ -42,9 +42,7 @@ struct ContentView: View {
                 .frame(width: 345, height: 110)
                 .background(.gray)
                 
-                Image("Utinho")
-                    .imageScale(.large)
-                    .foregroundColor(.accentColor)
+                UtiView()
                 
                 HStack(spacing: 24.0) {
                     Image("BMinigameAtivado")
