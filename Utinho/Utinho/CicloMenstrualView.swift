@@ -37,6 +37,7 @@ struct CicloMenstrualView: View {
         Button(changeFase(dia: dia)) {
             showPopUp = true
         }
+        .foregroundColor(.white)
         .popover(isPresented: $showPopUp) {
             Image(changeFase(dia: dia))
                 .background(BackgroundClearView())
