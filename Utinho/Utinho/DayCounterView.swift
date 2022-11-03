@@ -10,7 +10,12 @@ import SwiftUI
 struct DayCounterView: View {
     @State var date = Date()
     @State var dia: Int = 1
+    
     @ObservedObject var fase: FaseDoCiclo
+    
+    @ObservedObject var saudeProgress: BarProgressSaude
+    @ObservedObject var nutriProgress: BarProgressSaude
+    @ObservedObject var lazerProgress: BarProgressSaude
     
     var body: some View {
         VStack {
@@ -61,6 +66,9 @@ struct DayCounterView: View {
     
     public func defineFase(FASE: String) {
         fase.fase = FASE
+        saudeProgress.value -= 1.0
+        nutriProgress.value -= 1.0
+        lazerProgress.value -= 1.0
     }
     
     func changeFase(dia: Int) -> String {

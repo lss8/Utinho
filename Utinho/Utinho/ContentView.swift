@@ -37,7 +37,7 @@ struct ContentView: View {
                             HorizontalProgressBar(saudeBar: saudeProgress, alimentacaoBar: nutricaoProgress, lazerBar: lazerProgress)
                         }
                         .frame(width: 64, height: 96)
-                        DayCounterView(fase: faseCiclo)
+                        DayCounterView(fase: faseCiclo, saudeProgress: saudeProgress, nutriProgress: nutricaoProgress, lazerProgress: lazerProgress)
                         SleepBotaoView()
                     }
                     .padding(.horizontal, 0.0)
@@ -81,7 +81,7 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 class BarProgressSaude: ObservableObject { // comecei aqui criando a classe
-    @Published var value = 40.0       // aqui inicializa o valor da barra
+    @Published var value = 70.0       // aqui inicializa o valor da barra
 }
 
 class FaseDoCiclo: ObservableObject {

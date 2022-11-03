@@ -45,34 +45,71 @@ struct ItemKit: View {
     public func addToBar(item: String) {
         switch item {
         case "Anticoncepcional":
-            saudeProgress.value = saudeProgress.value - 10.0
-            nutricaoProgress.value = 70.0
-            lazerProgress.value = 100.0
-            print("1")
+            saudeProgress.value -= 10.0
         case "Camisinha":
-            saudeProgress.value = 50.0
-            nutricaoProgress.value = 30.0
-            lazerProgress.value = 30.0
-            print("2")
-        case "Calcinha":
-            saudeProgress.value = 30.0
-            nutricaoProgress.value = 40.0
-            lazerProgress.value = 20.0
-            print("3")
-        case "Coletor":
-            print("4")
-        case "Absorvente":
-            print("5")
-        case "Pilula":
-            print("6")
-        case "Compressa":
-            print("7")
-        case "RemedioColica":
-            print("8")
-        default:
             saudeProgress.value += 10.0
-            nutricaoProgress.value -= 5.0
+            lazerProgress.value += 5.0
+        case "Calcinha":
+            saudeProgress.value += 10.0
+        case "Coletor":
+            saudeProgress.value += 10.0
+        case "Absorvente":
+            saudeProgress.value += 10.0
+        case "Pilula":
+            saudeProgress.value -= 10.0
+        case "Compressa":
+            saudeProgress.value += 10.0
+        case "RemedioColica":
+            saudeProgress.value += 10.0
+        case "Agua":
+            saudeProgress.value += 10.0
+            nutricaoProgress.value += 10.0
+        case "Cha":
+            saudeProgress.value += 10.0
+            nutricaoProgress.value += 10.0
+        case "Cupnoodles":
+            saudeProgress.value -= 5.0
+            nutricaoProgress.value += 10.0
+        case "Abacate":
+            saudeProgress.value += 5.0
+            nutricaoProgress.value += 10.0
+        case "Chocolate":
+            saudeProgress.value -= 10.0
+            nutricaoProgress.value += 10.0
+            lazerProgress.value += 5.0
+        case "Banana":
+            saudeProgress.value += 5.0
+            nutricaoProgress.value += 10.0
+        case "Sushi":
+            saudeProgress.value += 5.0
+            nutricaoProgress.value += 10.0
+            lazerProgress.value += 5.0
+        case "Cafe":
+            saudeProgress.value -= 10.0
+            nutricaoProgress.value += 10.0
+        case "Games":
+            lazerProgress.value += 10.0
+        case "Livro":
+            lazerProgress.value += 10.0
+        case "Spaday":
+            saudeProgress.value += 5.0
+            lazerProgress.value += 10.0
+        case "Piscininha":
             lazerProgress.value += 15.0
+        case "Festa":
+            lazerProgress.value += 10.0
+        case "Datezinho":
+            lazerProgress.value += 10.0
+        case "Bike":
+            saudeProgress.value += 5.0
+            lazerProgress.value += 10.0
+        case "Netflix":
+            lazerProgress.value += 10.0
+            
+        default:
+            saudeProgress.value += 0.0
+            nutricaoProgress.value += 0.0
+            lazerProgress.value += 0.0
         }
     }
     
